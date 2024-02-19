@@ -94,9 +94,9 @@ afterEvaluate {
         publications {
             create<MavenPublication>("release") {
                 from(components["release"])
-                groupId = "com.github.kayduemre"
-                artifactId = "greeting"
-                version = "1.0"
+                groupId = "com.live2.media"
+                artifactId = "media"
+                version = "1.0.1"
             }
         }
     }
