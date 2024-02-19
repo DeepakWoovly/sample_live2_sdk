@@ -1,8 +1,6 @@
-package com.example.videosdk.network.model
+package com.live2.media.internal.model
 
 import android.os.Parcelable
-import com.example.videosdk.PlayerWatchBodyView
-import com.example.videosdk.WatchableModel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

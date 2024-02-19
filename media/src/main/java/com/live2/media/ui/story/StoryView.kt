@@ -1,21 +1,22 @@
-package com.example.videosdk.feature.story
+package com.live2.media.ui.story
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Canvas
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
+import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videosdk.VideoSDK
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.feature.carousel.CarouselViewHolder
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.VideoSDK
+import com.live2.media.L1PlayerHelper
+import com.live2.media.internal.model.PostModel
+import com.live2.media.internal.network.ViewState
+import com.live2.media.ui.Live2ViewModel
 
 
 class StoryView @JvmOverloads constructor(
@@ -24,27 +25,18 @@ class StoryView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : RecyclerView(context, attrs, defStyleAttr), StoryItemListener {
 
-    private lateinit var lifecycleOwner: LifecycleOwner
     private lateinit var playerHelper: L1PlayerHelper
     var lastVisibleItemPosition = 0
     private var videoPreviewHandler = Handler(Looper.getMainLooper())
-    private var videoPreviewRunnable: Runnable? = null
     private var videosList: List<PostModel.Video>? = null
     private var videosForVideoScreen: List<PostModel.Video>? = null
     private lateinit var mContext: LifecycleOwner
+    private lateinit var viewModel: Live2ViewModel
 
-    private fun observeLifecycle() {
-        lifecycleOwner.lifecycle.addObserver(LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_START) {
-                initializeComponents()
-            }
-        })
-    }
-
-    private fun initializeComponents() {
-        if (::lifecycleOwner.isInitialized) {
+    private fun initializeComponents(list: List<PostModel.Video>) {
+        if (::mContext.isInitialized) {
             playerHelper = L1PlayerHelper(mContext, context)
-            val carouselAdapter = StoryAdapter( playerHelper,this, videosList!!)
+            val carouselAdapter = StoryAdapter( playerHelper,this, list)
             adapter = carouselAdapter
 
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -71,17 +63,27 @@ class StoryView @JvmOverloads constructor(
         }
     }
 
-    fun setLifeCycleOwner(owner: LifecycleOwner) {
-        lifecycleOwner = owner
-        observeLifecycle()
-    }
-
-    fun setVideosList(list: List<PostModel.Video>){
-        videosList = list
-    }
-
-    fun context(context: LifecycleOwner){
+    fun init(context: LifecycleOwner, embedId: String){
         this.mContext = context
+        viewModel = Live2ViewModel()
+        if (viewModel.isInitialized()){
+            viewModel.fetchFirstSetOfVideos(embedId)
+        }
+        observe()
+    }
+
+    private fun observe(){
+        viewModel.siteSectionsLiveData.observe(mContext){state ->
+            when(state){
+                is ViewState.Error -> {
+                }
+                ViewState.Loading -> {}
+                is ViewState.Success -> {
+                    videosList = state.data.videos
+                    initializeComponents(state.data.videos)
+                }
+            }
+        }
     }
 
     override fun onStoryClicked(position: Int) {

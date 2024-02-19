@@ -1,11 +1,10 @@
-package com.example.videosdk.feature.carousel
+package com.live2.media.ui.carousel
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.os.Parcelable
 import android.util.AttributeSet
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -13,10 +12,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videosdk.VideoSDK
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
-import java.util.ArrayList
+import com.live2.media.VideoSDK
+import com.live2.media.L1PlayerHelper
+import com.live2.media.internal.model.PostModel
+
 
 class CarouselView @JvmOverloads constructor(
     context: Context,

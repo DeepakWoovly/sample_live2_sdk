@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.productdetails
+package com.live2.media.ui.productdetails
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -13,20 +13,19 @@ import android.widget.ArrayAdapter
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
-import androidx.core.view.children
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
-import com.example.videosdk.R
-import com.example.videosdk.databinding.LayoutProductAttributeBinding
-import com.example.videosdk.databinding.LayoutProductDetailsBottomsheetBinding
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.DotsIndicatorDecoration
-import com.example.videosdk.util.Utils.Companion.getTextFromHTML
-import com.example.videosdk.util.Utils.Companion.gone
+import com.live2.media.utils.DotsIndicatorDecoration
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.live2.media.R
+import com.live2.media.databinding.LayoutProductAttributeBinding
+import com.live2.media.databinding.LayoutProductDetailsBottomsheetBinding
+import com.live2.media.internal.model.PostModel
+import com.live2.media.utils.Utils.Companion.getTextFromHTML
+import com.live2.media.utils.Utils.Companion.gone
 
 
 class ProductDetailsBottomSheet(private val productModel: PostModel.ProductDetails) :
@@ -47,7 +46,7 @@ class ProductDetailsBottomSheet(private val productModel: PostModel.ProductDetai
         bottomSheetDialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         bottomSheetDialog.setOnShowListener { dialogInterface ->
             val dialog = dialogInterface as BottomSheetDialog
-            val bottomSheet = dialog.findViewById<FrameLayout>(R.id.design_bottom_sheet)
+            val bottomSheet = dialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet)
             bottomSheet?.setBackgroundResource(android.R.color.transparent)
             BottomSheetBehavior.from<FrameLayout?>(bottomSheet!!).apply {
                 state = BottomSheetBehavior.STATE_EXPANDED

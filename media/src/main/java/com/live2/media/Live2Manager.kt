@@ -1,4 +1,47 @@
 package com.live2.media
 
-class Live2Manager {
+import android.app.Application
+import android.content.Context
+import android.util.Log
+import androidx.lifecycle.LifecycleOwner
+import com.live2.media.internal.network.ViewState
+import com.live2.media.ui.Live2ViewModel
+
+internal class Live2Manager {
+
+    private lateinit var application: Application
+    private lateinit var live2ViewModel: Live2ViewModel
+    private var context: LifecycleOwner? = null
+    fun setup(
+        application: Application,
+        authToken: String,
+        context: LifecycleOwner
+    ) {
+        this.application = application
+        this.context = context
+        live2ViewModel = Live2ViewModel()
+        if (live2ViewModel.isInitialized()){
+            //live2ViewModel.authorize(token = authToken)
+        }
+        observe()
+    }
+
+    private fun observe(){
+        live2ViewModel.authLiveData.observe(context!!) {state ->
+            when(state){
+                is ViewState.Error -> {}
+                ViewState.Loading -> {}
+                is ViewState.Success -> {}
+            }
+        }
+    }
+
+    // need to remove this
+    fun getLive2Videos(embedId: String){
+        if (live2ViewModel.isInitialized()){
+            live2ViewModel.fetchFirstSetOfVideos(embedId)
+        }
+    }
+
+
 }

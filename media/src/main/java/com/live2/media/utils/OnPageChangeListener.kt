@@ -1,4 +1,4 @@
-package com.example.videosdk.util
+package com.live2.media.utils
 
 abstract class OnPageChangeListener {
     private var lastLeftPosition: Int = -1

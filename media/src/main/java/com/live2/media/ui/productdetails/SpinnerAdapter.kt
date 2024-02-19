@@ -1,11 +1,11 @@
-package com.example.videosdk.feature.productdetails
+package com.live2.media.ui.productdetails
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import com.example.videosdk.databinding.LayoutAttributeItemBinding
+import com.live2.media.databinding.LayoutAttributeItemBinding
 
 class SpinnerAdapter(
     private val context: Context,

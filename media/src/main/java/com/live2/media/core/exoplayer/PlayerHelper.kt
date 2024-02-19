@@ -1,7 +1,6 @@
-package com.example.videosdk.core
+package com.live2.media.core.exoplayer
 
 import android.content.Context
-import android.net.Uri
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
@@ -9,8 +8,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.PauseableCountDownTimer
+import com.live2.media.utils.PauseableCountDownTimer
 import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.DefaultLoadControl
 import com.google.android.exoplayer2.DefaultRenderersFactory
@@ -21,18 +19,14 @@ import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.RenderersFactory
 import com.google.android.exoplayer2.audio.AudioAttributes
 import com.google.android.exoplayer2.source.DefaultMediaSourceFactory
-import com.google.android.exoplayer2.source.MediaSource
 import com.google.android.exoplayer2.source.ProgressiveMediaSource
-import com.google.android.exoplayer2.source.hls.DefaultHlsDataSourceFactory
 import com.google.android.exoplayer2.source.hls.HlsMediaSource
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSource
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.google.android.exoplayer2.upstream.cache.CacheDataSource
-import com.google.android.exoplayer2.util.Log
-import com.google.android.exoplayer2.util.MimeTypes
+import com.live2.media.internal.model.PostModel
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable

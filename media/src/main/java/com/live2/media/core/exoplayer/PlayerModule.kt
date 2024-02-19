@@ -1,4 +1,4 @@
-package com.example.videosdk.core
+package com.live2.media.core.exoplayer
 
 import android.content.Context
 import com.google.android.exoplayer2.C

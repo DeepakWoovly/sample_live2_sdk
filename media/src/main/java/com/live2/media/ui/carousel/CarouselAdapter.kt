@@ -1,11 +1,11 @@
-package com.example.videosdk.feature.carousel
+package com.live2.media.ui.carousel
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videosdk.databinding.LayoutCarouselItemBinding
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.L1PlayerHelper
+import com.live2.media.databinding.LayoutCarouselItemBinding
+import com.live2.media.internal.model.PostModel
 
 class CarouselAdapter(
     private val playerHelper: L1PlayerHelper,
@@ -27,7 +27,7 @@ class CarouselAdapter(
 
 
     override fun onBindViewHolder(holder: CarouselViewHolder, position: Int) {
-        holder.bind(videoList[position], playerHelper, carouselItemListener, position, isGrid)
+      //  holder.bind(videoList[position], playerHelper, carouselItemListener, position, isGrid)
     }
 
     fun getItemAtPosition(firstVisibleItemPosition: Int): PostModel.Video =

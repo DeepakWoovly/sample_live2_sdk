@@ -1,10 +1,9 @@
-package com.example.videosdk.feature.story
+package com.live2.media.ui.story
 
 import android.graphics.drawable.Drawable
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import androidx.core.view.isVisible
@@ -14,16 +13,17 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.example.videosdk.databinding.LayoutStoryItemBinding
-import com.example.videosdk.databinding.WatchBodyBinding
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.Utils
-import com.example.videosdk.util.Utils.Companion.gone
-import com.example.videosdk.util.Utils.Companion.show
+import com.live2.media.L1PlayerHelper
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.google.android.exoplayer2.video.VideoSize
+import com.live2.media.databinding.LayoutStoryItemBinding
+import com.live2.media.databinding.WatchBodyBinding
+import com.live2.media.internal.model.PostModel
+import com.live2.media.ui.live2view.SiteSectionViewClickListener
+import com.live2.media.utils.Utils
+import com.live2.media.utils.Utils.Companion.gone
+import com.live2.media.utils.Utils.Companion.show
 import kotlin.math.abs
 
 class StoryViewHolder(private val view: LayoutStoryItemBinding) :
@@ -33,7 +33,7 @@ class StoryViewHolder(private val view: LayoutStoryItemBinding) :
     fun bind(
         watchableModel: PostModel.Video,
         playerHelper: L1PlayerHelper,
-        storyItemListener: StoryItemListener,
+        siteSectionViewClickListener: SiteSectionViewClickListener,
         position: Int
     ) {
         this.playerHelper = playerHelper
@@ -44,7 +44,7 @@ class StoryViewHolder(private val view: LayoutStoryItemBinding) :
                 view.lblLive.gone()
             }
             loadPlaceHolder(view.playerLayout, this)
-            view.root.setOnClickListener { storyItemListener.onStoryClicked(position) }
+            view.root.setOnClickListener { siteSectionViewClickListener.onItemClicked(position) }
         }
     }
 

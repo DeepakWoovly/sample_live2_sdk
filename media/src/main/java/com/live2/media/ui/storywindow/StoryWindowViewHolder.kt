@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.storywindow
+package com.live2.media.ui.storywindow
 
 import android.graphics.drawable.Drawable
 import android.os.Handler
@@ -13,16 +13,17 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.example.videosdk.databinding.LayoutWindowStoryItemBinding
-import com.example.videosdk.databinding.WatchBodyBinding
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.Utils
-import com.example.videosdk.util.Utils.Companion.gone
-import com.example.videosdk.util.Utils.Companion.show
+import com.live2.media.L1PlayerHelper
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.google.android.exoplayer2.video.VideoSize
+import com.live2.media.databinding.LayoutWindowStoryItemBinding
+import com.live2.media.databinding.WatchBodyBinding
+import com.live2.media.internal.model.PostModel
+import com.live2.media.ui.live2view.SiteSectionViewClickListener
+import com.live2.media.utils.Utils
+import com.live2.media.utils.Utils.Companion.gone
+import com.live2.media.utils.Utils.Companion.show
 import kotlin.math.abs
 
 class StoryWindowViewHolder(private val view: LayoutWindowStoryItemBinding) :
@@ -32,13 +33,13 @@ class StoryWindowViewHolder(private val view: LayoutWindowStoryItemBinding) :
     fun bind(
         watchableModel: PostModel.Video,
         playerHelper: L1PlayerHelper,
-        storyItemListener: StoryWindowItemListener,
+        siteSectionViewClickListener: SiteSectionViewClickListener,
         position: Int
     ) {
         this.playerHelper = playerHelper
         with(watchableModel) {
             loadPlaceHolder(view.playerLayout, this)
-            view.root.setOnClickListener { storyItemListener.onStoryClicked(position) }
+            view.root.setOnClickListener { siteSectionViewClickListener.onItemClicked(position) }
         }
     }
 

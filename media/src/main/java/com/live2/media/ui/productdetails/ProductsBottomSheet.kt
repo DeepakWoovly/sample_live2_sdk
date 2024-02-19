@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.productdetails
+package com.live2.media.ui.productdetails
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -9,12 +9,12 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.videosdk.R
-import com.example.videosdk.databinding.LayoutProductsBottomsheetBinding
-import com.example.videosdk.network.model.PostModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.live2.media.R
+import com.live2.media.databinding.LayoutProductsBottomsheetBinding
+import com.live2.media.internal.model.PostModel
 
 class ProductsBottomSheet(
     private val productList: List<PostModel.Product>
@@ -34,7 +34,7 @@ class ProductsBottomSheet(
         bottomSheetDialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         bottomSheetDialog.setOnShowListener { dialogInterface ->
             val dialog = dialogInterface as BottomSheetDialog
-            val bottomSheet = dialog.findViewById<FrameLayout>(R.id.design_bottom_sheet)
+            val bottomSheet = dialog.findViewById<FrameLayout>(com.google.android.material.R.id.design_bottom_sheet)
             bottomSheet?.setBackgroundResource(android.R.color.transparent)
             BottomSheetBehavior.from<FrameLayout?>(bottomSheet!!).apply {
                 state = BottomSheetBehavior.STATE_EXPANDED

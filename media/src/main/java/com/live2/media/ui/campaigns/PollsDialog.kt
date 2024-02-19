@@ -1,24 +1,18 @@
-package com.example.videosdk.feature.campaigns
+package com.live2.media.ui.campaigns
 
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.CheckBox
 import android.widget.RadioButton
-import com.example.videosdk.R
-import com.example.videosdk.VideoItemVM
-import com.example.videosdk.databinding.LayoutDialogBinding
-import com.example.videosdk.databinding.LayoutPollDialogBinding
-import com.example.videosdk.databinding.McqOptionViewBinding
-import com.example.videosdk.databinding.PollOptionViewBinding
-import com.example.videosdk.databinding.ViewLineSeperatorBinding
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.Utils.Companion.gone
+import com.live2.media.R
+import com.live2.media.databinding.LayoutPollDialogBinding
+import com.live2.media.databinding.PollOptionViewBinding
+import com.live2.media.databinding.ViewLineSeperatorBinding
+import com.live2.media.internal.model.PostModel
+import com.live2.media.utils.Utils.Companion.gone
 
 class PollsDialog(
     private val context: Context,

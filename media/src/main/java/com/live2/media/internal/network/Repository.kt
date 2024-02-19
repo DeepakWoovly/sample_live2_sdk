@@ -1,14 +1,13 @@
-package com.example.videosdk.feature
+package com.live2.media.internal.network
 
-import com.example.videosdk.network.ApiResult
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.internal.model.PostModel
 
 interface Repository {
-    suspend fun fetchFirstSetOfVideosForCarousel(): ApiResult<PostModel.Model>
-    suspend fun fetchFirstSetOfVideosForGrid(): ApiResult<PostModel.Model>
-    suspend fun fetchFirstSetOfVideosForStory(): ApiResult<PostModel.Model>
-    suspend fun fetchFirstSetOfVideosForStoryWindow(): ApiResult<PostModel.Model>
-    suspend fun fetchFirstSetOfVideosForPiP(): ApiResult<PostModel.Model>
+    suspend fun fetchFirstSetOfVideos(embedId: String): ApiResult<PostModel.Model>
+
+    suspend fun authorize(
+        token: String
+    ): ApiResult<Any>
 
     suspend fun submitMCQResponse(
         publicCampaignId: String,

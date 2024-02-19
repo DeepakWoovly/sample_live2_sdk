@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.campaigns
+package com.live2.media.ui.campaigns
 
 interface CampaignsClickCallback {
     fun onMCQSubmitClicked(

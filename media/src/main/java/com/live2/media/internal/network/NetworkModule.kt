@@ -1,7 +1,6 @@
-package com.example.videosdk.network
+package com.live2.media.internal.network
 
-import com.example.videosdk.BuildConfig
-import com.example.videosdk.network.service.ClientService
+import com.live2.media.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -33,5 +32,5 @@ object NetworkModule {
             .build()
     }
 
-    fun provideClientApiService() = retrofit().create(ClientService::class.java)
+    fun provideClientApiService(): ClientService = retrofit().create(ClientService::class.java)
 }

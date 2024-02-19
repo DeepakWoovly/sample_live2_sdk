@@ -1,4 +1,4 @@
-package com.example.videosdk.util
+package com.live2.media.utils
 
 import android.annotation.SuppressLint
 import android.app.Activity

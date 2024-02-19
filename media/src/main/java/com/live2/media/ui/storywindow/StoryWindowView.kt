@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.storywindow
+package com.live2.media.ui.storywindow
 
 import android.content.Context
 import android.content.Intent
@@ -11,9 +11,9 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videosdk.VideoSDK
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.VideoSDK
+import com.live2.media.L1PlayerHelper
+import com.live2.media.internal.model.PostModel
 
 
 class StoryWindowView @JvmOverloads constructor(

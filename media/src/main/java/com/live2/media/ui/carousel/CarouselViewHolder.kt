@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.carousel
+package com.live2.media.ui.carousel
 
 import android.graphics.drawable.Drawable
 import android.os.Handler
@@ -13,18 +13,19 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.bumptech.glide.load.DataSource
-import com.example.videosdk.WatchableModel
-import com.example.videosdk.databinding.LayoutCarouselItemBinding
-import com.example.videosdk.databinding.LayoutCarouselProductImageBinding
-import com.example.videosdk.databinding.WatchBodyBinding
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.Utils
-import com.example.videosdk.util.Utils.Companion.invisible
-import com.example.videosdk.util.Utils.Companion.show
+import com.live2.media.L1PlayerHelper
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
 import com.google.android.exoplayer2.video.VideoSize
+import com.live2.media.databinding.LayoutCarouselItemBinding
+import com.live2.media.databinding.LayoutCarouselProductImageBinding
+import com.live2.media.databinding.WatchBodyBinding
+import com.live2.media.internal.model.PostModel
+import com.live2.media.internal.model.WatchableModel
+import com.live2.media.ui.live2view.SiteSectionViewClickListener
+import com.live2.media.utils.Utils
+import com.live2.media.utils.Utils.Companion.invisible
+import com.live2.media.utils.Utils.Companion.show
 import kotlin.math.abs
 
 class CarouselViewHolder(
@@ -33,19 +34,16 @@ class CarouselViewHolder(
 
     private var inflater = LayoutInflater.from(view.root.context)
     private lateinit var playerHelper: L1PlayerHelper
-    fun bind(watchableModel: WatchableModel, playerHelper: L1PlayerHelper, carouselItemListener: CarouselItemListener, position: Int, isGrid: Boolean) {
+    fun bind(
+        watchableModel: WatchableModel,
+        playerHelper: L1PlayerHelper,
+        siteSectionViewClickListener: SiteSectionViewClickListener,
+        position: Int
+    ) {
         this.playerHelper = playerHelper
         if (watchableModel !is PostModel.Video) return
-        if (isGrid){
-            view.carouselVideoLayout.ivPlayPause.invisible()
-            view.carouselVideoLayout.tvDescription.invisible()
-            view.carouselParent.layoutParams.apply {
-                width = 460
-                height = 750
-            }
-        }
         with(watchableModel) {
-           loadPlaceHolder(view.playerLayout, this)
+            loadPlaceHolder(view.playerLayout, this)
             view.carouselVideoLayout.apply {
                 tvDescription.text = title
                 ivPlayPause.show()
@@ -67,7 +65,7 @@ class CarouselViewHolder(
                     }
                     view.carouselProductsParent.addView(productBinding.root)
                 }
-                this.root.setOnClickListener {carouselItemListener.onCarouselItemClicked(position)}
+                this.root.setOnClickListener { siteSectionViewClickListener.onItemClicked(position) }
             }
         }
 
@@ -75,7 +73,7 @@ class CarouselViewHolder(
 //        else stopMedia()
     }
 
-    fun loadMedia(post: PostModel.Video){
+    fun loadMedia(post: PostModel.Video) {
         playerHelper.currentlyPlayingVideo = true
         loadVideo(view.playerLayout, post)
     }
@@ -88,7 +86,7 @@ class CarouselViewHolder(
         playerHelper.player = playerHelper.buildPlayer()
         watchBody.playerView.player = playerHelper.player
         watchBody.playerView.player?.volume = 0f
-        playerHelper.listener = object : Player.Listener{
+        playerHelper.listener = object : Player.Listener {
 
             override fun onVideoSizeChanged(videoSize: VideoSize) {
                 super.onVideoSizeChanged(videoSize)
@@ -141,7 +139,7 @@ class CarouselViewHolder(
 
 
         playerHelper.player?.let {
-            playerHelper.prepare(it,videoModel)
+            playerHelper.prepare(it, videoModel)
         }
         playerHelper.listener?.let {
             playerHelper.player?.addListener(it)
@@ -149,11 +147,12 @@ class CarouselViewHolder(
         playerHelper.player?.playWhenReady = true
     }
 
-    fun loadImage(post: PostModel.Video){
+    fun loadImage(post: PostModel.Video) {
         view.playerLayout.placeholder.show()
         view.carouselVideoLayout.ivPlayPause.show()
         view.carouselVideoLayout.tvDescription.show()
     }
+
     private fun loadPlaceHolder(watchBody: WatchBodyBinding, post: PostModel.Video) {
         with(watchBody.placeholder) {
             var thumbnailUrl = post.thumbnailUrl.substring(0)
@@ -198,7 +197,7 @@ class CarouselViewHolder(
         }
     }
 
-    private fun initializePlayer(){
+    private fun initializePlayer() {
 
     }
 }

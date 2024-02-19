@@ -1,4 +1,4 @@
-package com.example.videosdk.util
+package com.live2.media.utils
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -15,8 +15,7 @@ import android.view.View
 import android.widget.CheckBox
 import androidx.annotation.RequiresApi
 import androidx.core.view.WindowInsetsCompat
-import com.example.videosdk.R
-import com.google.gson.GsonBuilder
+import com.live2.media.R
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -57,9 +56,9 @@ class Utils {
                 appUrl
             )
 
-            var whatsAppShareText: String? = null
-            var instagramShareText: String? = null
-            var defaultShareText: String? = null
+            val whatsAppShareText: String?
+            val instagramShareText: String?
+            val defaultShareText: String?
 
             whatsAppShareText = defaultShareMessage
             instagramShareText = defaultShareMessage

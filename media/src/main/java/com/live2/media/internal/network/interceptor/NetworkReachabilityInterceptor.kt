@@ -16,7 +16,6 @@ interface NetworkStateChecker {
 }
 
 class NetworkStateCheckerImpl(private val context: Context) : NetworkStateChecker {
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun isNetworkAvailable(): Boolean {
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

@@ -1,4 +1,4 @@
-package com.example.videosdk.network
+package com.live2.media.internal.network
 
 import retrofit2.Response
 

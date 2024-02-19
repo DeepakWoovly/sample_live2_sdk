@@ -1,16 +1,11 @@
-package com.example.videosdk.feature.productdetails
+package com.live2.media.ui.productdetails
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
-import com.example.videosdk.R
-import com.example.videosdk.databinding.ProductPagerItemBinding
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.databinding.ProductPagerItemBinding
 
 class ProductVariantPagerAdapter(private val context: Context, private val productImageList: List<String>):
     RecyclerView.Adapter<ProductVariantPagerAdapter.ProductVariantHolder>() {

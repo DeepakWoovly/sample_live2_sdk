@@ -1,4 +1,4 @@
-package com.example.videosdk.core
+package com.live2.media.core.exoplayer
 
 import android.util.Log
 import kotlinx.coroutines.flow.MutableSharedFlow

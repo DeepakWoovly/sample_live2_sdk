@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.productdetails
+package com.live2.media.ui.productdetails
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.videosdk.databinding.BottomsheetProductItemBinding
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.Utils.Companion.gone
+import com.live2.media.databinding.BottomsheetProductItemBinding
+import com.live2.media.internal.model.PostModel
+import com.live2.media.utils.Utils.Companion.gone
 
 class ProductsBottomSheetAdapter(private val productsList: List<PostModel.Product>) :
     RecyclerView.Adapter<ProductsBottomSheetAdapter.ProductsViewHolder>() {

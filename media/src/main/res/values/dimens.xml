@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="pageMarginAndOffset">60dp</dimen>
+    <dimen name="viewpager_next_item_visible">0dp</dimen>
+    <dimen name="viewpager_current_item_horizontal_margin">50dp</dimen>
 </resources>

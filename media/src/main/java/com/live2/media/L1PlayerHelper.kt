@@ -1,4 +1,4 @@
-package com.example.videosdk.feature
+package com.live2.media
 
 import android.content.Context
 import android.os.Handler
@@ -7,11 +7,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
-import com.example.videosdk.core.PlayerModule.audioAttr
-import com.example.videosdk.core.PlayerModule.defaultBandwidthMeter
-import com.example.videosdk.core.PlayerModule.loadControl
-import com.example.videosdk.core.PlayerModule.renderersFactory
-import com.example.videosdk.network.model.PostModel
 import com.google.android.exoplayer2.C
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
@@ -22,9 +17,14 @@ import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSource
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.google.android.exoplayer2.upstream.cache.CacheDataSource
+import com.live2.media.core.exoplayer.PlayerModule.audioAttr
+import com.live2.media.core.exoplayer.PlayerModule.defaultBandwidthMeter
+import com.live2.media.core.exoplayer.PlayerModule.loadControl
+import com.live2.media.core.exoplayer.PlayerModule.renderersFactory
+import com.live2.media.internal.model.PostModel
 
 class L1PlayerHelper(
-    private val lifecycleOwner: LifecycleOwner,
+    lifecycleOwner: LifecycleOwner,
     private val context: Context
 ) : LifecycleObserver {
 

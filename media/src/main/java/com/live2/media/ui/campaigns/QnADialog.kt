@@ -1,26 +1,18 @@
-package com.example.videosdk.feature.campaigns
+package com.live2.media.ui.campaigns
 
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Context
-import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewTreeObserver.OnPreDrawListener
 import android.view.Window
 import android.view.WindowManager
-import androidx.annotation.RequiresApi
-import com.example.videosdk.R
-import com.example.videosdk.VideoItemVM
-import com.example.videosdk.databinding.LayoutDialogBinding
-import com.example.videosdk.databinding.LayoutQnaDialogBinding
-import com.example.videosdk.databinding.VideoLayoutBinding
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.util.Utils.Companion.keyboardIsVisible
+import com.live2.media.R
+import com.live2.media.databinding.LayoutQnaDialogBinding
+import com.live2.media.internal.model.PostModel
 
 class QnADialog(
     context: Context,

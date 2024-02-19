@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources >
+
+    <style name="Base.Theme.Media" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <style name="Theme.Videos" parent="Base.Theme.Media" />
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ProductDetailsBottomSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+    </style>
+
+
 </resources>

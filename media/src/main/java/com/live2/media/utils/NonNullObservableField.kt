@@ -1,4 +1,4 @@
-package com.example.videosdk.util
+package com.live2.media.utils
 
 import androidx.databinding.Observable
 import androidx.databinding.ObservableField

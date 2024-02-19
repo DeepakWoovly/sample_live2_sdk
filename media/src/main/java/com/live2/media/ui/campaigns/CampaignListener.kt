@@ -1,6 +1,6 @@
-package com.example.videosdk.feature.campaigns
+package com.live2.media.ui.campaigns
 
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.internal.model.PostModel
 
 interface CampaignListener {
     fun onSubmitClicked()

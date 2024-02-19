@@ -1,50 +1,26 @@
-package com.example.videosdk.feature
+package com.live2.media.internal.network
 
-import android.health.connect.datatypes.BloodPressureRecord.BodyPosition
-import com.example.videosdk.network.ApiResult
-import com.example.videosdk.network.getResult
-import com.example.videosdk.network.model.PostModel
-import com.example.videosdk.network.service.ClientService
-import com.example.videosdk.util.Utils.Companion.getJsonRequestBody
+import android.util.Log
+import com.live2.media.internal.model.PostModel
+import com.live2.media.utils.Utils.Companion.getJsonRequestBody
 import org.json.JSONObject
 
 class ClientRepositoryImpl(
     private val clientApiService: ClientService,
-): Repository {
+) : Repository {
 
-    override suspend fun fetchFirstSetOfVideosForCarousel(): ApiResult<PostModel.Model> {
+
+    override suspend fun fetchFirstSetOfVideos(embedId: String): ApiResult<PostModel.Model> {
         val result = getResult {
-            clientApiService.fetchFirstSetOfVideosForCarousel()
+            clientApiService.fetchFirstSetOfVideos(embedId)
         }
         return result
     }
 
-    override suspend fun fetchFirstSetOfVideosForGrid(): ApiResult<PostModel.Model> {
-        val result = getResult {
-            clientApiService.fetchFirstSetOfVideosForGrid()
+    override suspend fun authorize(token: String): ApiResult<Any> {
+        return getResult {
+            clientApiService.authorize(authToken = token)
         }
-        return result
-    }
-
-    override suspend fun fetchFirstSetOfVideosForStory(): ApiResult<PostModel.Model> {
-        val result = getResult {
-            clientApiService.fetchFirstSetOfVideosForStory()
-        }
-        return result
-    }
-
-    override suspend fun fetchFirstSetOfVideosForStoryWindow(): ApiResult<PostModel.Model> {
-        val result = getResult {
-            clientApiService.fetchFirstSetOfVideosForStoryWindow()
-        }
-        return result
-    }
-
-    override suspend fun fetchFirstSetOfVideosForPiP(): ApiResult<PostModel.Model> {
-        val result = getResult {
-            clientApiService.fetchFirstSetOfVideosForPiP()
-        }
-        return result
     }
 
     override suspend fun submitMCQResponse(
@@ -59,10 +35,9 @@ class ClientRepositoryImpl(
         overlayResponse.put("optionIds", optionIds)
         overlayResponse.put("optionTextList", optionTextList)
         json.put("overlayResponse", overlayResponse)
-        val result = getResult {
+        return getResult {
             clientApiService.submitCampaignResponse(body = json.getJsonRequestBody())
         }
-        return result
     }
 
     override suspend fun submitPollResponse(
@@ -77,10 +52,10 @@ class ClientRepositoryImpl(
         overlayResponse.put("optionId", optionId)
         overlayResponse.put("optionText", optionText)
         json.put("overlayResponse", overlayResponse)
-        val result = getResult {
+        return getResult {
             clientApiService.submitCampaignResponse(body = json.getJsonRequestBody())
         }
-        return result
+
     }
 
     override suspend fun submitQnaResponse(
@@ -92,10 +67,9 @@ class ClientRepositoryImpl(
         json.put("overlayType", "QUESTION")
         json.put("publicCampaignId", publicCampaignId)
         json.put("overlayResponse", overlayResponse.put("answerText", answerText))
-        val result = getResult {
+       return getResult {
             clientApiService.submitCampaignResponse(body = json.getJsonRequestBody())
         }
-        return result
     }
 
 }

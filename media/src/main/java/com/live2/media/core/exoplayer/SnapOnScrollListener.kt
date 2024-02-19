@@ -1,4 +1,4 @@
-package com.example.videosdk.core
+package com.live2.media.core.exoplayer
 
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper

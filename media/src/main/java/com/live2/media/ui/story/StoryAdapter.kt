@@ -1,11 +1,11 @@
-package com.example.videosdk.feature.story
+package com.live2.media.ui.story
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.videosdk.databinding.LayoutStoryItemBinding
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.L1PlayerHelper
+import com.live2.media.databinding.LayoutStoryItemBinding
+import com.live2.media.internal.model.PostModel
 
 class StoryAdapter(
     private val playerHelper: L1PlayerHelper,
@@ -21,7 +21,7 @@ class StoryAdapter(
     override fun getItemCount(): Int = videoList.size
 
     override fun onBindViewHolder(holder: StoryViewHolder, position: Int) {
-        holder.bind(videoList[position], playerHelper, storyItemListener, position)
+        //holder.bind(videoList[position], playerHelper, storyItemListener, position)
     }
 
     fun getItemAtPosition(firstVisibleItemPosition: Int): PostModel.Video =

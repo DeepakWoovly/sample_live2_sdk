@@ -6,16 +6,16 @@
     <data>
         <variable
             name="seekBarVm"
-            type="com.example.videosdk.VideoItemSeekbarVm" />
+            type="com.live2.media.VideoItemSeekbarVm" />
 
         <variable
             name="vm"
-            type="com.example.videosdk.VideoItemVM" />
+            type="com.live2.media.VideoItemVM" />
 
 
         <variable
             name="clickCallbacks"
-            type="com.example.videosdk.VideoItemClickCallbacks" />
+            type="com.live2.media.VideoItemClickCallbacks" />
 
         <import type="android.view.View"/>
     </data>

@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">VideoSDK</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="close">Close</string>
+    <string name="test">Kanishka’s must-haves in the summer season for audience in a gl...</string>
+    <string name="mute">Mute</string>
+    <string name="share">Share</string>
+    <string name="submit">Submit</string>
+    <string name="type_here">Type here...</string>
+    <string name="default_share_string">Found this interesting vlog - {{title}} on Live2.ai. Checkout all the posts here: {{webURL}}</string>
+    <string name="back">Back</string>
+    <string name="product_varient_image">product varient image</string>
+    <string name="description">Description</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="product_image">product_image</string>
+    <string name="thanks_for_your_feedback">Thanks for your feedback!</string>
 </resources>

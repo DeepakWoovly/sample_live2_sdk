@@ -1,4 +1,4 @@
-package com.example.videosdk.feature.floatingwindow
+package com.live2.media.ui.floatingwindow
 
 import android.app.Service
 import android.content.Context
@@ -10,13 +10,10 @@ import android.os.IBinder
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
-import android.view.View
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
-import com.example.videosdk.core.PlayerHelper
-import com.example.videosdk.databinding.LayoutPipItemBinding
-import com.example.videosdk.feature.L1PlayerHelper
-import com.example.videosdk.network.model.PostModel
+import com.live2.media.databinding.LayoutPipItemBinding
+import com.live2.media.internal.model.PostModel
 
 class FloatingWindowService: Service() {
     private var windowManager: WindowManager? = null
