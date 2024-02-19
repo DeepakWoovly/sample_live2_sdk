@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Existing background shape -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#EBEAEA" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <!-- Arrow icon at the end -->
+    <item android:drawable="@drawable/ic_arrow_down_spinner"
+        android:gravity="end|center_vertical|clip_vertical"
+        android:end="12dp"
+        />
+</layer-list>

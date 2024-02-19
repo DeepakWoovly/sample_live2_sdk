@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/productDetailsSheet"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/llAddToCartParent"
+        android:background="@drawable/bg_bottomsheet"
+        >
+
+        <ImageView
+            android:id="@+id/bsIcon"
+            android:layout_width="40dp"
+            android:layout_height="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_bottomsheet_icon"
+            android:padding="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/bsIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+            <TextView
+                android:id="@+id/tvBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@drawable/ic_back_black"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                />
+
+            <ImageView
+                android:id="@+id/ivClose"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_close_black"
+                android:padding="3dp"
+                android:src="@drawable/ic_close"
+                android:layout_gravity="end"
+                />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/productDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/vpProductVariant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/product_pager_item" />
+
+                <TextView
+                    android:id="@+id/tvProductTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@+id/vpProductVariant"
+                    tools:text="MAC lipstick - Creme matte - Long lasting - Violet pink shade" />
+
+                <LinearLayout
+                    android:id="@+id/llProductPriceDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvProductTitle">
+
+                    <TextView
+                        android:id="@+id/tvProductPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/vpProductVariant"
+                        tools:text="Rs.1500" />
+
+                    <TextView
+                        android:id="@+id/tvProductPriceOriginal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/roboto"
+                        android:textColor="#696969"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/vpProductVariant"
+                        tools:text="Rs.2100" />
+
+                    <View
+                        android:id="@+id/verticalLineSeparator1"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:alpha=".8"
+                        android:background="#696969" />
+
+                    <TextView
+                        android:id="@+id/tvProductDiscount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="#4CAF50"
+                        android:textSize="18sp"
+                        app:layout_constraintTop_toBottomOf="@+id/vpProductVariant"
+                        tools:text="50% Off" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/lineSeparator1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:alpha=".8"
+                    android:background="#C1C1C1"
+                    app:layout_constraintTop_toBottomOf="@+id/llProductPriceDetails" />
+
+                <LinearLayout
+                    android:id="@+id/llProductAttributesParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lineSeparator1"
+                    />
+
+                <View
+                    android:id="@+id/lineSeparator2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:alpha=".8"
+                    android:background="#C1C1C1"
+                    app:layout_constraintTop_toBottomOf="@+id/llProductAttributesParent" />
+
+                <TextView
+                    android:id="@+id/tvDescriptionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/description"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lineSeparator2" />
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvDescriptionLabel"
+                    tools:text="This Antioxidant-Rich Face Serum has a world-class, COSMOS-Certified active — BLUE Oléoactif. It is a unique active blend of three varieties of rice: Purple (Black), Brown, and Red rice. It is sourced from the Camargue region in the South of France, which gives the power to PROTECT and DETOXIFY your skin. This ‘Indigenous Plant-Based SuperFood’ is highly potent and has proven clinical results to work on skin concerns caused by environmental pollutants and urban lifestyle. The product has a mild fragrance from citrus &amp; soothing essential oils hence it relaxes your mind." />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/llAddToCartParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:padding="12dp"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".9"
+            android:background="@drawable/bg_add_to_cart"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/add_to_cart"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivCart"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_weight=".1"
+            android:layout_marginStart="10dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_cart_black"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

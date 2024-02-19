@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="seekBarVm"
+            type="com.example.videosdk.VideoItemSeekbarVm" />
+
+        <variable
+            name="vm"
+            type="com.example.videosdk.VideoItemVM" />
+
+
+        <variable
+            name="clickCallbacks"
+            type="com.example.videosdk.VideoItemClickCallbacks" />
+
+        <import type="android.view.View"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent"
+        tools:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:expandableText="@{vm.video.title}"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintWidth_max="wrap"
+            android:lineSpacingExtra="0sp"
+            app:layout_constraintWidth_percent="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </TextView>
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:padding="10dp"
+            android:onClick="@{() -> clickCallbacks.onCloseClicked(vm)}"
+            android:src="@drawable/ic_close_vector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white"
+            android:contentDescription="@string/close">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/ivPip"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:padding="6dp"
+            android:onClick="@{() -> clickCallbacks.onPipClicked(vm)}"
+            android:src="@drawable/ic_pip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivClose"
+            app:tint="@color/white"
+            android:contentDescription="@string/close">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/ivMute"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:padding="4dp"
+            android:onClick="@{() -> clickCallbacks.onMuteUnMuteClicked(vm)}"
+            android:src="@drawable/ic_unmute_video"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPip"
+            app:tint="@color/white"
+            android:contentDescription="@string/mute">
+
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/ivShare"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="12dp"
+            android:padding="4dp"
+            android:src="@drawable/ic_share"
+            android:onClick="@{() -> clickCallbacks.onShareClicked(vm)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/share"
+            app:layout_constraintTop_toBottomOf="@+id/ivMute"
+            />
+
+        <ImageView
+            android:id="@+id/iv_play_pause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="1.33dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:visibility="@{vm.isSeekBarEnabled()? View.VISIBLE : View.GONE}"
+            android:onClick="@{() -> clickCallbacks.onPlayPauseClicked(vm)}"
+            android:src="@drawable/live2_ic_play_video"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@color/white" />
+
+        <SeekBar
+            android:id="@+id/sb_player"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp"
+            android:layout_marginStart="10dp"
+            android:visibility="@{vm.isSeekBarEnabled()? View.VISIBLE : View.GONE}"
+            android:progress="@{seekBarVm.seekBarProgress}"
+            android:layout_marginEnd="10dp"
+            android:progressDrawable="@drawable/seekbar_bg"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white"
+            android:translationX="-10dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_play_pause"
+            app:layout_constraintEnd_toStartOf="@id/tv_duration"
+            app:layout_constraintStart_toEndOf="@id/iv_play_pause"
+            app:layout_constraintTop_toTopOf="@id/iv_play_pause" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="end"
+            android:includeFontPadding="false"
+            android:shadowColor="@color/white_shadow"
+            android:shadowDy="0.33"
+            android:visibility="@{vm.isSeekBarEnabled()? View.VISIBLE : View.GONE}"
+            android:text="@{seekBarVm.videoProgress}"
+            android:shadowRadius="0.66"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:translationX="-10dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_play_pause"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_play_pause"
+            tools:text="03:47"/>
+
+
+        <ImageView
+            android:id="@+id/tvCampaigns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="@{vm.isTvCampaignsVisible() ? View.VISIBLE : View.GONE}"
+            android:onClick="@{ () -> clickCallbacks.onCampaignClicked(vm)}"
+            android:translationX="-10dp"
+            app:layout_constraintBottom_toTopOf="@id/campaignCTA"
+            app:layout_constraintEnd_toEndOf="parent"
+          />
+
+        <TextView
+            android:id="@+id/feedbackToast"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/thanks_for_your_feedback"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:padding="12dp"
+            android:visibility="@{vm.shouldShowFeedbackToast == true ? View.VISIBLE : View.GONE}"
+            android:layout_margin="40dp"
+            android:background="@drawable/bg_toast"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvCampaigns"
+            tools:visibility="visible"
+            />
+
+        <include
+            android:id="@+id/productLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/layout_product_widget"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/sb_player"
+            tools:visibility="visible" />
+          />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/productLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/productLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@color/transparent"
+                android:layout_height="50dp">
+
+
+                <View
+                    android:id="@+id/secondView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="#99000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/productIcon1" />
+
+                <ImageView
+                    android:id="@+id/productIcon1"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_corner_bg_8"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="H,16:9"
+                    app:layout_constraintHorizontal_weight="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tvProductCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="start"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/productIcon1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="3 Products" />
+
+                <TextView
+                    android:id="@+id/tvViewShop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="start"
+                    android:text="View Shop"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="View Shop"
+                    />
+
+                <ImageView
+                    android:id="@+id/showIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_shop_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvViewShop"
+                    app:layout_constraintEnd_toStartOf="@+id/tvViewShop"
+                    app:layout_constraintTop_toTopOf="@+id/tvViewShop" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/campaignCTA"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="30dp"
+            android:elevation="0dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/btn_bg_white"
+            android:fontFamily="@font/roboto"
+            android:onClick="@{() -> clickCallbacks.onCampaignCTAClicked(vm)}"
+            android:visibility="@{vm.isCampaignCTAEnabled()? View.VISIBLE : View.GONE}"
+            android:text="Take a survey"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/productLayout1"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

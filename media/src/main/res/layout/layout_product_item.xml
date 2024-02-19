@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/productCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@color/transparent"
+                android:layout_height="125dp">
+
+                <View
+                    android:id="@+id/productMainView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="#99000000"
+                    app:layout_constraintEnd_toStartOf="@+id/percentOffBg"
+                    app:layout_constraintStart_toEndOf="@+id/productIcon" />
+
+                <TextView
+                    android:id="@+id/amountTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="top"
+                    android:textColor="@color/white"
+                    android:textFontWeight="700"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@+id/productDesc"
+                    app:layout_constraintTop_toBottomOf="@+id/productDesc"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="1,000" />
+
+                <TextView
+                    android:id="@+id/mrpTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:gravity="top"
+                    android:textColor="@color/white"
+                    android:textFontWeight="500"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/amountTxt"
+                    app:layout_constraintStart_toEndOf="@+id/amountTxt"
+                    app:layout_constraintTop_toTopOf="@+id/amountTxt"
+                    tools:text="1500" />
+
+
+                <ImageView
+                    android:id="@+id/productIcon"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/rounded_corner_bg_8"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintDimensionRatio="H,16:9"
+                    app:layout_constraintEnd_toStartOf="@+id/productMainView"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/productBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/et_input_bg"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:tag="product_cta"
+                    android:textColor="@color/white"
+                    android:textFontWeight="400"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/productMainView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/productDesc"
+                    tools:text="Add to Bag" />
+
+                <TextView
+                    android:id="@+id/productDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/roboto"
+                    android:maxLines="2"
+                    android:paddingStart="2dp"
+                    android:textFontWeight="400"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/productMainView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/productIcon"
+                    app:layout_constraintTop_toTopOf="@+id/productIcon"
+                    tools:text="Faces Canada Ultime Pro A asjfafaskbfaskbfbaskfbaskfbaskdfbdfdf Matte Made in Heaven Ink" />
+
+                <View
+                    android:id="@+id/percentOffBg"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:background="#99000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toEndOf="@+id/productMainView" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/percentOffBgInner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardBackgroundColor="#11111111"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:contentPadding="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/percentOffBg"
+                    app:layout_constraintEnd_toEndOf="@+id/percentOffBg"
+                    app:layout_constraintStart_toEndOf="@+id/productBtn"
+                    app:layout_constraintStart_toStartOf="@+id/percentOffBg"
+                    app:layout_constraintTop_toTopOf="@+id/percentOffBg">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/percentOffBgInnerConstraint"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/percentage_off_bg">
+
+
+                        <TextView
+                            android:id="@+id/tvPercentOff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="end"
+                            android:includeFontPadding="false"
+                            android:lineSpacingExtra="0dp"
+                            android:text="50%"
+                            android:textColor="@color/white"
+                            android:textFontWeight="800"
+                            android:textSize="22sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="50%" />
+
+
+                        <TextView
+                            android:id="@+id/percentOff1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:padding="0dp"
+                            android:text=" OFF"
+                            android:textColor="@color/white"
+                            android:textFontWeight="700"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="@+id/tvPercentOff"
+                            app:layout_constraintEnd_toEndOf="@+id/tvPercentOff"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPercentOff"
+                            tools:text="OFF" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+</layout>
+
+
