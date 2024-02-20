@@ -66,4 +66,7 @@
 -keep class kotlin.** { *; }
 -keep class kotlinx.** { *; }
 
+-keepclassmembers class kotlinx.coroutines.CoroutineExceptionHandler { *; }
+-keepclassmembers class kotlinx.coroutines.CoroutineScope { *; }
+
 
