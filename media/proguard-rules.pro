@@ -27,7 +27,7 @@
 -keep class androidx.** { *; }
 -keep interface androidx.* { *; }
 
--keep class com.live2.media.Live2SDK {
+-keep class com.live2.media.Live2SDK.$* {
     *;
 }
 
