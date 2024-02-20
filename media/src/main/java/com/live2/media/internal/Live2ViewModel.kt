@@ -1,4 +1,4 @@
-package com.live2.media.client
+package com.live2.media.internal
 
 import android.util.Log
 import androidx.lifecycle.LiveData

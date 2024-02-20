@@ -1,4 +1,4 @@
-package com.live2.media.client
+package com.live2.media.internal
 
 enum class SiteSectionType {
     StoryView,
