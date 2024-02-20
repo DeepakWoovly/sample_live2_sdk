@@ -1,10 +1,9 @@
-package com.live2.media
+package com.live2.media.client
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.LifecycleOwner
+import com.live2.media.Live2Manager
 
 class Live2SDK  private constructor() {
 
@@ -22,7 +21,7 @@ class Live2SDK  private constructor() {
         private var lock = Any()
         private lateinit var live2Instance: Live2SDK
         private lateinit var authToken: String
-        fun authToken(token: String): Builder{
+        fun authToken(token: String): Builder {
             this.authToken = token
             return this
         }

@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
 
-    <com.live2.media.ui.live2view.SiteSectionRecyclerView
+    <com.live2.media.client.SiteSectionRecyclerView
         android:id="@+id/storyView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:viewType="StoryView"
         />
 
-    <com.live2.media.ui.live2view.SiteSectionRecyclerView
+    <com.live2.media.client.SiteSectionRecyclerView
         android:id="@+id/storyWindowView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         app:viewType="StoryWindowView"
         />
 
-    <com.live2.media.ui.live2view.SiteSectionRecyclerView
+    <com.live2.media.client.SiteSectionRecyclerView
         android:id="@+id/carouselView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

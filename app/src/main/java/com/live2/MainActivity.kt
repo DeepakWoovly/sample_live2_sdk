@@ -3,8 +3,7 @@ package com.live2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.live2.databinding.ActivityMainBinding
-import com.live2.media.Live2SDK
-import com.live2.media.ui.story.StoryView
+import com.live2.media.client.Live2SDK
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

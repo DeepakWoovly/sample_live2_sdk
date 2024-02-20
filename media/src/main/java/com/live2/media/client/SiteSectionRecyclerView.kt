@@ -1,4 +1,4 @@
-package com.live2.media.ui.live2view
+package com.live2.media.client
 
 import android.content.Context
 import android.content.Intent
@@ -16,6 +16,10 @@ import com.live2.media.internal.model.PostModel
 import com.live2.media.internal.network.ViewState
 import com.live2.media.ui.Live2ViewModel
 import com.live2.media.ui.carousel.CarouselViewHolder
+import com.live2.media.ui.live2view.SiteSectionType
+import com.live2.media.ui.live2view.SiteSectionViewAdapter
+import com.live2.media.ui.live2view.SiteSectionViewClickListener
+import com.live2.media.ui.live2view.ViewType
 import com.live2.media.ui.story.StoryViewHolder
 import com.live2.media.ui.storywindow.StoryWindowViewHolder
 
