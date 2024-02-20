@@ -16,8 +16,8 @@ import com.google.android.exoplayer2.ui.PlayerView
 import com.live2.media.databinding.ItemVideoBinding
 import com.live2.media.databinding.LayoutProductWidgetBinding
 import com.live2.media.databinding.LayoutStickerViewBinding
-import com.live2.media.internal.model.PostModel
-import com.live2.media.internal.model.WatchableModel
+import com.live2.media.client.model.PostModel
+import com.live2.media.client.model.WatchableModel
 import com.live2.media.utils.Utils
 import com.live2.media.utils.Utils.Companion.invisible
 import com.live2.media.utils.Utils.Companion.setHeightAndWidth

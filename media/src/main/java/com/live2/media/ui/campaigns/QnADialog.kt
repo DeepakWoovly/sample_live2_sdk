@@ -12,7 +12,7 @@ import android.view.Window
 import android.view.WindowManager
 import com.live2.media.R
 import com.live2.media.databinding.LayoutQnaDialogBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 class QnADialog(
     context: Context,

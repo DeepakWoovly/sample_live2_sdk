@@ -1,4 +1,4 @@
-package com.live2.media.internal.model
+package com.live2.media.client.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -54,7 +54,7 @@ class PostModel(override val itemType: Int) : WatchableModel, Parcelable{
         override val itemType: Int
             get() = TODO("Not yet implemented")
 
-        fun getCampaignType():Campaigns{
+        fun getCampaignType(): Campaigns {
             return when(overlay?.layoutId){
                 1 -> Campaigns.DEFAULT
                 2 -> Campaigns.POLL
@@ -83,7 +83,7 @@ class PostModel(override val itemType: Int) : WatchableModel, Parcelable{
         val createdAt: String? = null,
         val description: String? = null,
         val descriptionHtml: String? = null,
-        val discountedPrice: String? = null ,
+        val discountedPrice: String? = null,
         val externalProductId: String? = null,
         val externalVariantId: String? = null,
         val id: String? = null,

@@ -11,7 +11,7 @@ import com.live2.media.R
 import com.live2.media.databinding.LayoutPollDialogBinding
 import com.live2.media.databinding.PollOptionViewBinding
 import com.live2.media.databinding.ViewLineSeperatorBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Utils.Companion.gone
 
 class PollsDialog(

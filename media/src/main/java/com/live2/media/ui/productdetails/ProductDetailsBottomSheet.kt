@@ -23,7 +23,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.live2.media.R
 import com.live2.media.databinding.LayoutProductAttributeBinding
 import com.live2.media.databinding.LayoutProductDetailsBottomsheetBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Utils.Companion.getTextFromHTML
 import com.live2.media.utils.Utils.Companion.gone
 

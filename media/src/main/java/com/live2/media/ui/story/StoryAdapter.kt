@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.live2.media.L1PlayerHelper
 import com.live2.media.databinding.LayoutStoryItemBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 class StoryAdapter(
     private val playerHelper: L1PlayerHelper,

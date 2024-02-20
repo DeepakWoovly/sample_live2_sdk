@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.live2.media.databinding.BottomsheetProductItemBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Utils.Companion.gone
 
 class ProductsBottomSheetAdapter(private val productsList: List<PostModel.Product>) :

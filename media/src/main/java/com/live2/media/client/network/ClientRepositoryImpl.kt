@@ -1,7 +1,7 @@
-package com.live2.media.internal.network
+package com.live2.media.client.network
 
 import android.util.Log
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Utils.Companion.getJsonRequestBody
 import org.json.JSONObject
 

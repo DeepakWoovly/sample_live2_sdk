@@ -12,7 +12,7 @@ import com.live2.media.R
 import com.live2.media.databinding.LayoutDialogBinding
 import com.live2.media.databinding.McqOptionViewBinding
 import com.live2.media.databinding.ViewLineSeperatorBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Utils.Companion.gone
 
 class MCQDialog(

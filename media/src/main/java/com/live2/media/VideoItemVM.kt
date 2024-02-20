@@ -19,7 +19,7 @@ import com.live2.media.ui.campaigns.PollsDialog
 import com.live2.media.ui.campaigns.QnADialog
 import com.live2.media.core.exoplayer.PlayerHelper
 import com.live2.media.databinding.ItemVideoBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.ui.campaigns.CampaignsClickCallback
 import com.live2.media.utils.Utils.Companion.gone
 import com.live2.media.utils.Utils.Companion.show

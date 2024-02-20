@@ -20,8 +20,8 @@ import com.google.android.exoplayer2.video.VideoSize
 import com.live2.media.databinding.LayoutCarouselItemBinding
 import com.live2.media.databinding.LayoutCarouselProductImageBinding
 import com.live2.media.databinding.WatchBodyBinding
-import com.live2.media.internal.model.PostModel
-import com.live2.media.internal.model.WatchableModel
+import com.live2.media.client.model.PostModel
+import com.live2.media.client.model.WatchableModel
 import com.live2.media.client.SiteSectionViewClickListener
 import com.live2.media.utils.Utils
 import com.live2.media.utils.Utils.Companion.invisible

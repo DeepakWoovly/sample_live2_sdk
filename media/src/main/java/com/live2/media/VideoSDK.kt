@@ -32,8 +32,8 @@ import com.google.android.exoplayer2.database.ExoDatabaseProvider
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultDataSource
 import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor
-import com.live2.media.internal.model.PostModel
-import com.live2.media.internal.network.ViewState
+import com.live2.media.client.model.PostModel
+import com.live2.media.client.network.ViewState
 import com.live2.media.client.Live2ViewModel
 import com.live2.media.utils.Utils
 import com.live2.media.utils.Utils.Companion.gone

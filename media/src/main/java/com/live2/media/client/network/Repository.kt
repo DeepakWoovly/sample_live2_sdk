@@ -1,6 +1,6 @@
-package com.live2.media.internal.network
+package com.live2.media.client.network
 
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 interface Repository {
     suspend fun fetchFirstSetOfVideos(embedId: String): ApiResult<PostModel.Model>

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.live2.media.VideoSDK
 import com.live2.media.L1PlayerHelper
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 
 class CarouselView @JvmOverloads constructor(

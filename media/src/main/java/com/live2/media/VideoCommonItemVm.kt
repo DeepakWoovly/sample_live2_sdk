@@ -3,7 +3,7 @@ package com.live2.media
 import androidx.databinding.ObservableBoolean
 import com.live2.media.utils.NonNullObservableField
 import com.live2.media.core.exoplayer.PlayerHelper
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 abstract class VideoCommonItemVm(
     val item: PostModel.Video,

@@ -14,7 +14,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.live2.media.R
 import com.live2.media.databinding.LayoutProductsBottomsheetBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 class ProductsBottomSheet(
     private val productList: List<PostModel.Product>

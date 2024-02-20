@@ -21,7 +21,7 @@ import com.live2.media.core.exoplayer.PlayerModule.audioAttr
 import com.live2.media.core.exoplayer.PlayerModule.defaultBandwidthMeter
 import com.live2.media.core.exoplayer.PlayerModule.loadControl
 import com.live2.media.core.exoplayer.PlayerModule.renderersFactory
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 class L1PlayerHelper(
     lifecycleOwner: LifecycleOwner,

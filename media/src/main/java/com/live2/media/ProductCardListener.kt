@@ -1,6 +1,6 @@
 package com.live2.media
 
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 
 interface ProductCardListener {

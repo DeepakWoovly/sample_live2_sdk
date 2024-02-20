@@ -8,7 +8,7 @@ import com.live2.media.L1PlayerHelper
 import com.live2.media.databinding.LayoutCarouselItemBinding
 import com.live2.media.databinding.LayoutStoryItemBinding
 import com.live2.media.databinding.LayoutWindowStoryItemBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.ui.carousel.CarouselViewHolder
 import com.live2.media.ui.story.StoryViewHolder
 import com.live2.media.ui.storywindow.StoryWindowViewHolder

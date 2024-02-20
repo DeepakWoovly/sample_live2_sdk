@@ -1,6 +1,6 @@
-package com.live2.media.internal.network
+package com.live2.media.client.network
 
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.Body

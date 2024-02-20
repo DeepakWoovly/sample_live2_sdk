@@ -13,12 +13,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.live2.media.databinding.LayoutProductItemBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Utils
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 
-class ProductPlacementViewPagerAdapter(val productsModel: List<PostModel.Product>,val productCardListener: ProductCardListener) : RecyclerView.Adapter<ProductPlacementViewPagerAdapter.ProductPlacementVH>() {
+class ProductPlacementViewPagerAdapter(val productsModel: List<PostModel.Product>, val productCardListener: ProductCardListener) : RecyclerView.Adapter<ProductPlacementViewPagerAdapter.ProductPlacementVH>() {
 
     private val _clickAction = PublishSubject.create<PostModel.Product>()
     private val _ctaClickAction = PublishSubject.create<PostModel.Product>()

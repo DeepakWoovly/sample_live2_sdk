@@ -13,7 +13,7 @@ import android.view.LayoutInflater
 import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import com.live2.media.databinding.LayoutPipItemBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 
 class FloatingWindowService: Service() {
     private var windowManager: WindowManager? = null

@@ -6,7 +6,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.live2.media.databinding.LayoutProductWidgetBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Constants
 import com.live2.media.utils.HorizontalMarginItemDecorations
 import io.reactivex.android.schedulers.AndroidSchedulers

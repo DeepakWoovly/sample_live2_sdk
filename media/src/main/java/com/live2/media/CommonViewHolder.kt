@@ -3,7 +3,7 @@ package com.live2.media
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.live2.media.ui.campaigns.CampaignsClickCallback
-import com.live2.media.internal.model.WatchableModel
+import com.live2.media.client.model.WatchableModel
 
 abstract class CommonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

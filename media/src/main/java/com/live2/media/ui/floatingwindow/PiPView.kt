@@ -28,7 +28,7 @@ import com.google.android.exoplayer2.video.VideoSize
 import com.live2.media.R
 import com.live2.media.databinding.LayoutPipItemBinding
 import com.live2.media.databinding.WatchBodyBinding
-import com.live2.media.internal.model.PostModel
+import com.live2.media.client.model.PostModel
 import com.live2.media.utils.Utils
 import kotlin.math.abs
 

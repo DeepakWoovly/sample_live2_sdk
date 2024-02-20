@@ -1,8 +1,8 @@
 package com.live2.media
 
 import androidx.recyclerview.widget.DiffUtil
-import com.live2.media.internal.model.PostModel
-import com.live2.media.internal.model.WatchableModel
+import com.live2.media.client.model.PostModel
+import com.live2.media.client.model.WatchableModel
 
 class WatchableModelDiffCallback : DiffUtil.ItemCallback<WatchableModel>() {
 

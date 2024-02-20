@@ -2,7 +2,7 @@ package com.live2.media
 
 import android.app.Application
 import androidx.lifecycle.LifecycleOwner
-import com.live2.media.internal.network.ViewState
+import com.live2.media.client.network.ViewState
 import com.live2.media.client.Live2ViewModel
 
 internal class Live2Manager {

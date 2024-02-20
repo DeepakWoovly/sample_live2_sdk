@@ -10,7 +10,7 @@ import com.live2.media.core.exoplayer.PlayerHelper
 import com.live2.media.core.exoplayer.VideoCacheHelper
 import com.live2.media.ui.campaigns.CampaignsClickCallback
 import com.live2.media.databinding.ItemVideoBinding
-import com.live2.media.internal.model.WatchableModel
+import com.live2.media.client.model.WatchableModel
 import kotlinx.coroutines.Job
 
 
