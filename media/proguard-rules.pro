@@ -62,4 +62,8 @@
     public <methods>;
 }
 
+-keep class kotlinx.coroutines.** { *; }
+-keep class kotlin.** { *; }
+-keep class kotlinx.** { *; }
+
 
