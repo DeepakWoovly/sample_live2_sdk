@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -51,10 +51,6 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
     //Image Loading
     implementation("com.github.bumptech.glide:annotations:4.16.0")
     implementation("com.github.bumptech.glide:okhttp3-integration:4.16.0")
@@ -96,7 +92,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.live2.media"
                 artifactId = "media"
-                version = "1.2.2"
+                version = "1.2.3"
             }
         }
     }
