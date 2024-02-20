@@ -25,7 +25,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            buildConfigField("String", "BASE_URL", "\"{https://console.live2.ai/}\"")
+            buildConfigField("String", "BASE_URL", "\"{https://beta.live2.ai/}\"")
         }
         debug {
             buildConfigField("String", "BASE_URL", "\"{https://beta.live2.ai/}\"")
@@ -92,7 +92,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.live2.media"
                 artifactId = "media"
-                version = "1.3.3"
+                version = "1.3.4"
             }
         }
     }

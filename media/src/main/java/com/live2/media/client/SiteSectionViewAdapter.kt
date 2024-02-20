@@ -1,4 +1,4 @@
-package com.live2.media.ui.live2view
+package com.live2.media.client
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

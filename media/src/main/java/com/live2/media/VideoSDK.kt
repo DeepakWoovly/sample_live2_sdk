@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.util.Rational
 import android.view.View
 import androidx.annotation.RequiresApi
@@ -35,7 +34,7 @@ import com.google.android.exoplayer2.upstream.DefaultDataSource
 import com.google.android.exoplayer2.upstream.cache.LeastRecentlyUsedCacheEvictor
 import com.live2.media.internal.model.PostModel
 import com.live2.media.internal.network.ViewState
-import com.live2.media.ui.Live2ViewModel
+import com.live2.media.client.Live2ViewModel
 import com.live2.media.utils.Utils
 import com.live2.media.utils.Utils.Companion.gone
 import com.live2.media.utils.Utils.Companion.show
