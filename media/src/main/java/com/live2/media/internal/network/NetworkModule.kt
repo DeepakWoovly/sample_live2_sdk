@@ -1,4 +1,4 @@
-package com.live2.media.client.network
+package com.live2.media.internal.network
 
 import com.live2.media.BuildConfig
 import okhttp3.OkHttpClient

@@ -6,11 +6,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.live2.media.client.model.PostModel
-import com.live2.media.client.network.ApiResult
-import com.live2.media.client.network.ClientRepositoryImpl
-import com.live2.media.client.network.NetworkModule
-import com.live2.media.client.network.Repository
-import com.live2.media.client.network.ViewState
+import com.live2.media.internal.network.ApiResult
+import com.live2.media.internal.network.ClientRepositoryImpl
+import com.live2.media.internal.network.NetworkModule
+import com.live2.media.internal.network.Repository
+import com.live2.media.internal.network.ViewState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

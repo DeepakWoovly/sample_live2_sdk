@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.live2.media.VideoSDK
 import com.live2.media.L1PlayerHelper
 import com.live2.media.client.model.PostModel
-import com.live2.media.client.network.ViewState
+import com.live2.media.internal.network.ViewState
 import com.live2.media.client.Live2ViewModel
 
 

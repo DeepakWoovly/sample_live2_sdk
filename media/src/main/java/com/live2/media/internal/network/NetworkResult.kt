@@ -1,4 +1,4 @@
-package com.live2.media.client.network
+package com.live2.media.internal.network
 
 import retrofit2.Response
 
