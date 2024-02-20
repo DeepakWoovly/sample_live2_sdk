@@ -135,7 +135,7 @@ class SiteSectionRecyclerView: RecyclerView, SiteSectionViewClickListener {
         this.mContext = context
         viewModel = Live2ViewModel()
         if (viewModel.isInitialized()){
-            viewModel.fetchFirstSetOfVideos(embedId)
+            viewModel.fetchFirstSetOfData(embedId)
         }
         observe()
     }

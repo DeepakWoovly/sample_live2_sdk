@@ -92,7 +92,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.live2.media"
                 artifactId = "media"
-                version = "1.3.4"
+                version = "1.3.5"
             }
         }
     }

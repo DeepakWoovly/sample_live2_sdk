@@ -37,7 +37,7 @@ internal class Live2Manager {
     // need to remove this
     fun getLive2Videos(embedId: String){
         if (live2ViewModel.isInitialized()){
-            live2ViewModel.fetchFirstSetOfVideos(embedId)
+            live2ViewModel.fetchFirstSetOfData(embedId)
         }
     }
 

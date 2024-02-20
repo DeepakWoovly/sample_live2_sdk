@@ -51,7 +51,7 @@ internal class Live2ViewModel : ViewModel() {
 
     }
 
-    fun fetchFirstSetOfVideos(embedId: String) {
+    fun fetchFirstSetOfData(embedId: String) {
         viewModelScope.launch(Dispatchers.IO) {
             when (val result = repository.fetchFirstSetOfVideos(embedId = embedId)) {
                 is ApiResult.Error -> {
