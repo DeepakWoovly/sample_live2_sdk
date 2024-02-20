@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -92,7 +92,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.live2.media"
                 artifactId = "media"
-                version = "1.2.9"
+                version = "1.3.0"
             }
         }
     }
